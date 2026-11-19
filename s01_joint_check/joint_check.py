@@ -19,10 +19,11 @@ def check_joint(name, angle, limits):
 def main():
     print(sys.argv)
 
-    check_joint(LIMITS, 10, LIMITS[i])
+    print(check_joint("J1", 10, LIMITS))
+    print(check_joint("J6", 200, LIMITS))
+    print(check_joint("J2", -120, LIMITS))
     # for joint in LIMITS:
         # print(f"{joint}: {LIMITS[joint]}")
-
 
 
 if __name__ == "__main__":
