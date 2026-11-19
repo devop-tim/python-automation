@@ -11,10 +11,18 @@ LIMITS = {
 }
 
 
+def check_joint(name, angle, limits):
+    low, high = limits[name]
+    return low <= angle <= high
+
+
 def main():
     print(sys.argv)
-    for joint in LIMITS:
-        print(f"{joint}: {LIMITS[joint]}")
+
+    check_joint(LIMITS, 10, LIMITS[i])
+    # for joint in LIMITS:
+        # print(f"{joint}: {LIMITS[joint]}")
+
 
 
 if __name__ == "__main__":
