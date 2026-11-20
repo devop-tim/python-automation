@@ -22,13 +22,12 @@ def main():
 
     for arg in args:
         angles.append(float(arg))
-    print(angles)
 
-    print(check_joint("J1", 10, LIMITS))
-    print(check_joint("J6", 200, LIMITS))
-    print(check_joint("J2", -120, LIMITS))
-    for joint in LIMITS:
-        print(f"{joint}: {LIMITS[joint]}")
+    for angle,joint in zip(angles,LIMITS):
+        if check_joint(joint, angle, LIMITS):
+            print(f"{joint}: {angle} OK")
+        else:
+            print(f"{joint}: {angle} OUT OF RANGE")
 
 
 if __name__ == "__main__":
